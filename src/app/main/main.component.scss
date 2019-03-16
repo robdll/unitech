@@ -2,7 +2,7 @@
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/photo.jpg");
+  background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../assets/photo.jpg");
 
   /* Set a specific height */
   height: 100vh;
@@ -23,3 +23,43 @@
   transform: translate(-50%, -50%);
   color: white;
 }
+
+.main-title{
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
+  font-size: 7em;
+}
+
+nav{
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background-color: transparent;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-slice{
+  background-color: pink;
+
+}
+
+.btn{
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 2em;
+  font-family: 'Cormorant', serif;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+    -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+    box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+ }
+}
+
+.logo{
+  width: 50px;
+}
+
