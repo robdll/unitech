@@ -3,61 +3,99 @@
     <img class="logo" src="../../assets/iconmonstr-bank-1.svg">
   </div>
   <div class="nav-slice">
-      <a class="nav-link">Roby</a>
+      <!-- <a class="nav-link">Roby</a>
       <a class="nav-link">Frocio</a>
-      <a class="nav-link">Ricchione</a>
+      <a class="nav-link">Ricchione</a> -->
   </div>
 </nav>
 <div class="hero-image">
   <div class="hero-text">
-    <h1 class="main-title">BECAME A DEVELOPER</h1>
+    <h1 class="main-title">FORMIAMO I DEVELOPER DEL FUTURO</h1>
     <button class="btn">APPLY NOW!</button>
   </div>
 </div>
 <article>
-  <div class="timeline-container"></div>
+  <div class="timeline-container">
+    <h2 class="main-title-copy">Chi sono gli sviluppatori del futuro?</h2>
+    <img class="future" src="../../assets/ilFuturo.svg"> 
+  </div>
   <div class="text-grid">
     <div class="">
       <p class="copy">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare velit sit amet orci placerat, eu faucibus erat imperdiet. Sed nec ullamcorper dui. Suspendisse pharetra urna urna. Quisque pharetra nulla a ante blandit, et condimentum nunc euismod. Vestibulum nec purus sit amet tellus ornare posuere. Sed fermentum elementum nunc. Integer lacinia pharetra urna, id elementum ante convallis eu.</p>
+          UniPro e' un accademy per sviluppatori.
+          La nostra missione e' di fornire ai nostri alunni l'esperienza e le capacita' necessarie per intraprendere una carriera nell'industria dello sviluppo informatico.
+          </p>
     </div>
     <div class="">
-      <p>Nullam lobortis dolor finibus, luctus sapien eu, posuere diam. In lacus elit, ultricies volutpat laoreet non, rhoncus elementum velit. Proin a leo ex. Nullam vitae dui ac ex rhoncus tempor. Cras ac convallis augue, id egestas arcu. Nullam consectetur felis sed felis blandit, vel feugiat est gravida. Pellentesque volutpat dictum odio ac lobortis. Aenean hendrerit a felis vel rhoncus. Donec dignissim est tincidunt risus blandit tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>
+          Abbiamo delineato tre differenti 'career path' estremamente appetibili per il mercato odierno.
+      </p>
     </div>
   </div>
-  <div class="timeline-container"></div>
+  <div class="timeline-container">
+      <h2 class="main-title-copy">Come si formano gli sviluppatori del futuro?</h2>
+    <img class="timeline" src="../../assets/timeline.svg"> 
+  </div>
   <div class="text-grid">
     <div class="">
       <p class="copy">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare velit sit amet orci placerat, eu faucibus erat imperdiet. Sed nec ullamcorper dui. Suspendisse pharetra urna urna. Quisque pharetra nulla a ante blandit, et condimentum nunc euismod. Vestibulum nec purus sit amet tellus ornare posuere. Sed fermentum elementum nunc. Integer lacinia pharetra urna, id elementum ante convallis eu.</p>
+        Il nostro corso è stato pensato e sviluppato da professionisti del settore.
+        ispirandosi a concetti fondamentali quali 'learning-by-doing' consentendo dal day 1 
+        un immersione in un vero ambiente di lavoro senza però tralasciare l importanza del supporto
+        educativo pensato adhoc per ogni studente.  
+      </p>
     </div>
     <div class="">
-      <p>Nullam lobortis dolor finibus, luctus sapien eu, posuere diam. In lacus elit, ultricies volutpat laoreet non, rhoncus elementum velit. Proin a leo ex. Nullam vitae dui ac ex rhoncus tempor. Cras ac convallis augue, id egestas arcu. Nullam consectetur felis sed felis blandit, vel feugiat est gravida. Pellentesque volutpat dictum odio ac lobortis. Aenean hendrerit a felis vel rhoncus. Donec dignissim est tincidunt risus blandit tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Universitatech ti guiderò in ogni tuo step verso la carriera da sviluppatore</p>
+        <ul>
+          <li>Supporto nella scelta della professione</li>
+          <li>Classi apposite, seminari e creazione di team per sviluppo di progetti reali</li>
+          <li>Lavoro garantito per 6 mesi con noi, o in caso di interesse delle nostre aziende facente parte del nostro network ti aiuteremo nella negoziazione del tuo primo lavoro da sviluppatore!</li>
+        </ul>
     </div>
         <div class="form-container">
           <h3 class="form-title">Contattaci</h3>
             <mat-form-field>
-              <input matInput placeholder="Nome">
+              <input [(ngModel)]="nome" name="nome"  matInput placeholder="Nome">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Cognome">
+                <input [(ngModel)]="cognome" name="cognome" matInput placeholder="Cognome">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Telefono">
+                <input [(ngModel)]="telefono" name="telefono" matInput placeholder="Telefono">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="E-mail">
+                <input [(ngModel)]="email" name="email" matInput placeholder="E-mail">
             </mat-form-field>
-            <!-- <mat-radio-group>
-                <mat-radio-button value="1">Insegnamento</mat-radio-button>
-                <mat-radio-button value="2">Opt</mat-radio-button>
-            </mat-radio-group> -->
             <mat-form-field>
-                <textarea matInput placeholder="Una tua breve descrizione"></textarea>
+                <textarea matInput [(ngModel)]="messaggio" name="messaggio" placeholder="Messaggio"></textarea>
               </mat-form-field>
+              <button class="btn-black" (click)="submit()">APPLY NOW!</button>
           </div>
     </div>
-    <div class="timeline-container"></div>
+    <div class="timeline-container">
+        <h2 class="main-title-copy">FAQ</h2>
+      <div class="text-grid">
+        <div>
+          <p class="copy-faq">Cos'e' univeristatech?<br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, error corrupti quidem accusantium aspernatur vel animi nobis?
+          </p>
+        </div>
+        <div>
+          <p class="copy-faq">Come avviene la formazione?</p>
+        </div>
+        <div>
+          <p class="copy-faq">Come viene supportata la scelta?</p>
+        </div>
+        <div>
+          <p class="copy-faq">Come funziona viene introdotto al mondo del lavoro?</p>          
+        </div>
+          <p class="copy-faq">UniverisitàTech è aperta a tutti?</p>
+        <div>
+          <p class="copy-faq">Corso e metodi di pagamento?</p>          
+        </div>        
+      </div>
+    </div>
 </article>
 <footer>
   <div class="footer-aling">

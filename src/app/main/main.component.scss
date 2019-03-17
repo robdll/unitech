@@ -74,6 +74,22 @@ nav{
  }
 }
 
+.btn-black{
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 2px;
+  font-family: 'Cormorant', serif;
+  width: 80%;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+    -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+    box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+ }
+}
+
 .logo{
   width: 50px;
   padding: 15px;
@@ -90,8 +106,23 @@ article{
 }
 
 .timeline-container{
-  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  font-family: 'Cormorant', serif;
   width: 100%;
+  padding: 90px 20px 50px 20px;  
+  
+}
+
+.timeline{
+  width: 70%;
+}
+
+.future{
+  width: 50%;
 }
 
 .form-title{
@@ -100,15 +131,20 @@ article{
   line-height: 50px;
 }
 
-.copy{
-  initial-letter: 2;
-}
-.copy::first-letter {
-  initial-letter: 2em;
+.copy:first-child:first-letter {
+  color: black;
+  float: left;
+  font-family: 'Cormorant', serif;
+  font-size: 5em;
+  // line-height: 60px;
+  // padding-top: 4px;
+  padding: 10px;
+  // padding-right: 8px;
+  // padding-left: 3px;
 }
 .text-grid{
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 100px;
   width: 80%;
   grid-template-columns: 1fr 1fr;
   font-size: 1.7em;
@@ -172,4 +208,20 @@ h4{
 .contacts{
 
   
+}
+.copy-faq{
+  font-size: 0.8em;
+  line-height: 50px;
+  font-weight: 200;
+  font-family: 'Cormorant', serif;
+  color: black;
+}
+
+.main-title-copy{
+  font-size: 4em;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  width: 80%;
+  line-height: 100px;
+  border-bottom: 1px solid;
 }
