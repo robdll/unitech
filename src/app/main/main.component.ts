@@ -4,6 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import AOS from 'aos';
+
 
 
 
@@ -29,6 +31,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    AOS.init();
   }
   
   submit(){
