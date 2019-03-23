@@ -95,7 +95,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;;
+  width: 55%;;
   font-size: 1.7em;
   line-height: 50px;
   font-weight: 200;
@@ -104,9 +104,10 @@ nav{
 }
 
 .logo{
-  width: 400px;
+  width: 150px;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 100px;
+  background-color: white;
 }
 
 article{
@@ -290,12 +291,15 @@ h4{
   font-family: 'Cormorant', serif;
   color: black;
 }
+.copy{
+  font-size: 31px;
+}
 
 .main-title-copy{
   font-size: 4em;
   font-family: "Roboto", sans-serif;
   text-align: left;
-  width: 80%;
+  width: 55%;
   line-height: 100px;
   border-bottom: 1px solid;
 }
