@@ -43,9 +43,9 @@
     </div>
   </div>
     <div class="icons-container">
-          <a class="icons-text"><img class="icons" src="../../assets/noun_education_1817512.svg">Formazione</a>
-          <a class="icons-text"><img class="icons" src="../../assets/noun_direction_2093067.svg">Supporto alla scelta</a>
-          <a class="icons-text"><img class="icons" src="../../assets/noun_contract_540382.svg">Contratto lavorativo</a>
+          <a class="icons-text">Formazione<img class="icons" src="../../assets/noun_education_1817512.svg"></a>
+          <a class="icons-text">Supporto alla scelta<img class="icons" src="../../assets/noun_direction_2093067.svg"></a>
+          <a class="icons-text">Contratto lavorativo<img class="icons" src="../../assets/noun_contract_540382.svg"></a>
     </div>
     <div class="text-grid">
         <div class="form-container">
@@ -62,7 +62,7 @@
             <mat-form-field>
                 <input [(ngModel)]="email" name="email" matInput placeholder="E-mail">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field style="margin-bottom: 40px;">
                 <textarea matInput [(ngModel)]="messaggio" name="messaggio" placeholder="Messaggio"></textarea>
               </mat-form-field>
               <button class="btn-black" (click)="submit()">APPLY NOW!</button>
