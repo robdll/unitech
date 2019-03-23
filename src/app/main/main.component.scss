@@ -68,6 +68,7 @@ nav{
   border-radius: 2px;
   font-family: 'Cormorant', serif;
   &:hover {
+    cursor: pointer;
     -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
     -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
     box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
