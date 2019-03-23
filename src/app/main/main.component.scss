@@ -137,7 +137,8 @@ article{
   width: 70%;
 }
 .future-2{
-  width: 40%;
+  width: 90%;
+  padding: 30px;
 }
 
 .form-title{
@@ -169,6 +170,15 @@ mat-accordion {
 
 
 }
+
+.stop{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 .mat-accordion .mat-expansion-panel:last-of-type{
   border-bottom-right-radius: 0px; 
   border-bottom-left-radius: 0px; 
@@ -217,8 +227,8 @@ mat-expansion-panel{
 // }
 .text-grid{
   display: grid;
-  grid-gap: 100px;
-  width: 80%;
+  grid-gap: 50px;
+  width: 55%;
   grid-template-columns: 1fr 1fr;
   font-size: 1.7em;
   line-height: 50px;
