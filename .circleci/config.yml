@@ -1,175 +1,49 @@
-# TODO
-#
-# - fix docker image
-# - add notification when build fails
-# - extend slack orbs to support buttons (https://api.slack.com/docs/message-attachments#attaching_link_buttons_to_a_message) and so on
-#
-
-version: 2.1
-
-# see https://github.com/CircleCI-Public/slack-orb for more info
-orbs:
-  slack: circleci/slack@2.0.0
-
-commands:
-  deploy:
-    parameters:
-      s3_bucket_name:
-        type: string
-      cf_distribution_id:
-        type: string
-      slack_message:
-        type: string
-    steps:
-      - run:
-        name: "Deploy to S3"
-        command: aws s3 sync ./dist s3://<< parameters.s3_bucket_name >>/ --delete
-      - run:
-        name: "Purge CloudFront cache"
-        command: aws cloudfront create-invalidation --distribution-id << parameters.cf_distribution_id >> --paths "/*"
-      - slack/notify:
-        include_job_number_field: false
-        include_project_field: false
-        include_visit_job_action: false
-        title: "Unitech"
-        message: << parameters.slack_message >>
-
-executors:
-  node_container:
-    working_directory: ~/workspace
-    docker:
-      - image: circleci/node:lts
-  aws_container:
-    working_directory: ~/workspace
-    docker:
-      - image: bashell/alpine-bash
-
-# yml alias can be recalled by replacing th & with a *
-aliases:
-  - &save_node_cache
-    name: Save cache
-    key: dependencies-{{ checksum "package.json" }}
-    paths:
-      - node_modules
-
-  - &restore_node_cache
-    name: Restore cache
-    keys:
-      - dependencies-{{ checksum "package.json" }} # specific key for package.json
-      - dependencies- # generic key for all previously cached node_modules folders
-
-  - &attach_workspace
-    at: ~/workspace
-
-  - &docker_image_workaround
-    name: "Docker image workaround"
-    command: |
-      # REMOVE this after pushing and configuring custom Docker image
-      apk add \
-        ca-certificates \
-        curl \
-        python \
-        py-pip
-      pip install --upgrade awscli==1.16.125
-      apk -v --purge del py-pip
-
+version: 2
 jobs:
-  "Install dependencies":
-    executor: node_container
+  build:
+    docker:
+      - image: koop4/nodeawscli:latest
+    working_directory: "~/universitech"
     steps:
       - checkout
-      - restore_cache: *restore_node_cache
-      - run:
-        name: "Build info"
-        command: echo "Testing branch '${CIRCLE_BRANCH}' with checksum '${CIRCLE_SHA1}'"
-      - run:
-        name: "Install dependencies"
-        command: npm install
-      - save_cache: *save_node_cache
-      - persist_to_workspace:
-        root: ~/workspace
-        paths:
-          - .
-
-  "Lint tests":
-    executor: node_container
+      - restore_cache:
+          key: 'dependency-cache-{{ checksum "package.json" }}'
+      - run: npm install
+      - save_cache:
+          key: 'dependency-cache-{{ checksum "package.json" }}'
+          paths:
+            - ./node_modules
+      - run: npm run build
+      - run: npm audit fix
+      - run: aws s3 rm s3://univeritech --recursive
+      - run: aws s3 cp dist s3://univeritech --recursive
+      #- run: aws s3 cp sitemap.xml s3://univeritech
+      - run: aws cloudfront create-invalidation --distribution-id EPG88TOGLI4DY --paths "/*"
+  nothing:
+    docker:
+      - image: koop4/nodeawscli:latest
+    working_directory: "~/universitech"
     steps:
-      - attach_workspace: *attach_workspace
-      - run:
-        name: "Run linting rules"
-        command: npm run lint
-
-  "Unit tests":
-    executor: node_container
-    steps:
-      # - attach_workspace: *attach_workspace
-      - run:
-        name: "Run unit tests and calculate coverage"
-        command: echo Placeholder
-
-  "Integration tests":
-    executor: node_container
-    steps:
-      # - attach_workspace: *attach_workspace
-      - run:
-        name: "Run integration tests"
-        command: echo Placeholder
-
-  "Build":
-    executor: node_container
-    steps:
-      - attach_workspace: *attach_workspace
-      - run:
-        name: "Build"
-        command: |
-          npm run build --prod
-          #cp -rf src/sitemap.xml ./dist # copy the not auto-generated sitemap in the ./dist folder
-      - persist_to_workspace:
-        root: ~/workspace
-        paths:
-          - ./dist
-      - store_artifacts:
-        path: ./dist
-
-  "Deploy":
-    executor: aws_container
-    steps:
-      - run: *docker_image_workaround
-      - attach_workspace: *attach_workspace
-      - deploy:
-        s3_bucket_name: "univeritech"
-        cf_distribution_id: "EPG88TOGLI4DY"
-        slack_message: "Deployment to <https://universita.tech|PRODUCTION> completed! :tada: <https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}|workflow>."
-
+      - checkout
+      - restore_cache:
+          key: 'dependency-cache-{{ checksum "package.json" }}'
+      - run: npm install
+      - save_cache:
+          key: 'dependency-cache-{{ checksum "package.json" }}'
+          paths:
+            - ./node_modules
+      - run: npm run build
 workflows:
   version: 2
-  "build and deploy":
+  build-deploy:
     jobs:
-      - "Install dependencies"
-
-      - "Lint tests":
-        requires:
-          - "Install dependencies"
-
-      - "Unit tests":
-        requires:
-          - "Install dependencies"
-
-      - "Integration tests":
-        requires:
-          - "Install dependencies"
-
-      - "Build":
-        requires:
-          - "Install dependencies"
-          - "Lint tests"
-          - "Unit tests"
-          - "Integration tests"
-
-      - "Deploy":
-        requires:
-          - "Build"
-        filters:
-          branches:
-            only:
-              - master
+      - nothing:
+          filters:
+            branches:
+              ignore:
+                - master
+      - build:
+          filters:
+            branches:
+              only:
+                - master
