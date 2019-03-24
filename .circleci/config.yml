@@ -7,6 +7,20 @@
 
 version: 2.1
 
+# see https://github.com/CircleCI-Public/slack-orb for more info
+orbs:
+  slack: circleci/slack@2.0.0
+
+commands:
+  deploy:
+    parameters:
+      s3_bucket_name:
+        type: string
+      cf_distribution_id:
+        type: string
+      slack_message:
+        type: string
+
 executors:
   node_container:
     working_directory: ~/workspace
@@ -17,9 +31,7 @@ executors:
     docker:
       - image: bashell/alpine-bash
 
-orbs:
-  slack: circleci/slack@2.0.0
-
+# yml alias can be recalled by replacing th & with a *
 aliases:
   - &save_node_cache
     name: Save cache
@@ -47,30 +59,6 @@ aliases:
         py-pip
       pip install --upgrade awscli==1.16.125
       apk -v --purge del py-pip
-
-commands:
-  deploy:
-    parameters:
-      s3_bucket_name:
-        type: string
-      cf_distribution_id:
-        type: string
-      slack_message:
-        type: string
-
-    steps:
-      - run:
-        name: "Deploy to S3"
-        command: aws s3 sync ./dist s3://<< parameters.s3_bucket_name >>/ --delete
-      - run:
-        name: "Purge CloudFront cache"
-        command: aws cloudfront create-invalidation --distribution-id << parameters.cf_distribution_id >> --paths "/*"
-      - slack/notify:
-        include_job_number_field: false
-        include_project_field: false
-        include_visit_job_action: false
-        title: "Unitech"
-        message: << parameters.slack_message >>
 
 jobs:
   "Install dependencies":
@@ -104,7 +92,7 @@ jobs:
       # - attach_workspace: *attach_workspace
       - run:
         name: "Run unit tests and calculate coverage"
-        command: Placeholder for test
+        command: echo Placeholder
 
   "Integration tests":
     executor: node_container
@@ -112,7 +100,7 @@ jobs:
       # - attach_workspace: *attach_workspace
       - run:
         name: "Run integration tests"
-        command: echo this is only a placeholder
+        command: echo Placeholder
 
   "Build":
     executor: node_container
@@ -130,15 +118,27 @@ jobs:
       - store_artifacts:
         path: ./dist
 
-  "Deploy - STAGING":
+  "Deploy":
     executor: aws_container
     steps:
       - run: *docker_image_workaround
       - attach_workspace: *attach_workspace
       - deploy:
         s3_bucket_name: "univeritech"
-        cf_distribution_id: "E2FVY4X70SQ906"
+        cf_distribution_id: "EPG88TOGLI4DY"
         slack_message: "Deployment to <https://universita.tech|PRODUCTION> completed! :tada: <https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}|workflow>."
+      - run:
+        name: "Deploy to S3"
+        command: aws s3 sync ./dist s3://<< parameters.s3_bucket_name >>/ --delete
+      - run:
+        name: "Purge CloudFront cache"
+        command: aws cloudfront create-invalidation --distribution-id << parameters.cf_distribution_id >> --paths "/*"
+      - slack/notify:
+        include_job_number_field: false
+        include_project_field: false
+        include_visit_job_action: false
+        title: "Unitech"
+        message: << parameters.slack_message >>
 
 workflows:
   version: 2
@@ -165,7 +165,7 @@ workflows:
           - "Unit tests"
           - "Integration tests"
 
-      - "Deploy - STAGING":
+      - "Deploy":
         requires:
           - "Build"
         filters:
