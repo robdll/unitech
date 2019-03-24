@@ -1,0 +1,10 @@
+
+<form #form="ngForm" class="form-container"  (ngSubmit)="onSubmit(form.value)">
+  <h3 class="form-title">Contattaci</h3>
+  <mat-form-field> <input required matInput ngModel type="text" name="firstname" placeholder="Nome"> </mat-form-field>
+  <mat-form-field> <input required matInput ngModel type="text" name="lastname" placeholder="Cognome"> </mat-form-field>
+  <mat-form-field> <input required matInput ngModel type="tel"  name="phone"  placeholder="Telefono: 333-123456" pattern="[0-9]{9}"></mat-form-field>
+  <mat-form-field> <input required matInput ngModel type="email" name="email" placeholder="E-mail"> </mat-form-field>
+  <mat-form-field> <textarea required matInput ngModel type="text" name="description" placeholder="Messaggio"></textarea></mat-form-field>
+  <button type="submit" class="btn btn-black" >APPLY NOW!</button>
+</form>
