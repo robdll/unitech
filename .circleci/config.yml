@@ -4,6 +4,7 @@
 # - add notification when build fails
 # - extend slack orbs to support buttons (https://api.slack.com/docs/message-attachments#attaching_link_buttons_to_a_message) and so on
 #
+
 version: 2.1
 
 executors:
