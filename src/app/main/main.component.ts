@@ -9,31 +9,27 @@ import AOS from 'aos';
 
 export class MainComponent implements OnInit {
 
-  nome:string;
-  cognome:string;
-  telefono:number;
-  email:string;
-  messaggio:string;
-
-  payload:any;
+  nome: string;
+  cognome: string;
+  telefono: number;
+  email: string;
+  messaggio: string;
+  payload: any;
 
   constructor() { }
 
   ngOnInit() {
     AOS.init();
   }
-  
-  submit(){
 
+  submit() {
     this.payload = {
-      name:this.nome,
-      lastname:this.cognome,
-      phone:this.telefono,
-      messagge:this.messaggio,
-      email:this.email      
-    }
-    console.log(this.payload)
-    
+      name: this.nome,
+      lastname: this.cognome,
+      phone: this.telefono,
+      messagge: this.messaggio,
+      email: this.email
+    };
   }
 
 }
