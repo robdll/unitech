@@ -1,10 +1,21 @@
 
-<form #form="ngForm" class="form-container"  (ngSubmit)="onSubmit(form.value)">
+<form #form="ngForm" class="form-container"  (ngSubmit)="onSubmit(form)">
   <h3 class="form-title">Contattaci</h3>
-  <mat-form-field> <input required matInput ngModel type="text" name="firstname" placeholder="Nome"> </mat-form-field>
-  <mat-form-field> <input required matInput ngModel type="text" name="lastname" placeholder="Cognome"> </mat-form-field>
-  <mat-form-field> <input required matInput ngModel type="tel"  name="phone"  placeholder="Telefono: 333-123456" pattern="[0-9]{9}"></mat-form-field>
-  <mat-form-field> <input required matInput ngModel type="email" name="email" placeholder="E-mail"> </mat-form-field>
-  <mat-form-field> <textarea required matInput ngModel type="text" name="description" placeholder="Messaggio"></textarea></mat-form-field>
-  <button type="submit" class="btn btn-black" >APPLY NOW!</button>
+
+  <mat-form-field> <input #firstname="ngModel" required matInput ngModel type="text" name="firstname" placeholder="Nome"> </mat-form-field>
+  <span class="error" *ngIf="firstname.touched && firstname.errors?.required">Inserisci il tuo nome</span>
+
+  <mat-form-field> <input #lastname="ngModel" required matInput ngModel type="text" name="lastname" placeholder="Cognome"> </mat-form-field>
+  <span class="error" *ngIf="lastname.touched && lastname.errors?.required">Inserisci il tuo cognome</span>
+
+  <mat-form-field> <input #phone="ngModel" required matInput ngModel type="tel"  name="phone"  placeholder="Telefono: 333-123456" pattern="[0-9]{9}"></mat-form-field>
+  <span class="error" *ngIf="phone.touched && phone.errors?.required">Inserisci il tuo numero di telefono.</span>
+
+  <mat-form-field> <input #email="ngModel" required matInput ngModel type="email" name="email" placeholder="E-mail"> </mat-form-field>
+  <span class="error" *ngIf="email.touched && email.errors?.required">Inserisci la tua e-mail</span>
+
+  <mat-form-field> <textarea #description="ngModel" required matInput ngModel type="text" name="description" placeholder="Messaggio"></textarea></mat-form-field>
+  <span class="error" *ngIf="description.touched && description.errors?.required">Inserisci il tuo messaggio</span>
+
+  <button type="submit" class="btn btn-black" [class.btn-disabled]="form.invalid" [disabled]="form.invalid">APPLY NOW!</button>
 </form>
