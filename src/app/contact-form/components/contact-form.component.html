@@ -8,7 +8,7 @@
   <mat-form-field> <input #lastname="ngModel" required matInput ngModel type="text" name="lastname" placeholder="Cognome"> </mat-form-field>
   <span class="error" *ngIf="lastname.touched && lastname.errors?.required">Inserisci il tuo cognome</span>
 
-  <mat-form-field> <input #phone="ngModel" required matInput ngModel type="tel"  name="phone"  placeholder="Telefono: 333-123456" pattern="[0-9]{9}"></mat-form-field>
+  <mat-form-field> <input #phone="ngModel" required matInput ngModel type="tel"  name="phone"  placeholder="Telefono" pattern="[0-9]{10}"></mat-form-field>
   <span class="error" *ngIf="phone.touched && phone.errors?.required">Inserisci il tuo numero di telefono.</span>
 
   <mat-form-field> <input #email="ngModel" required matInput ngModel type="email" name="email" placeholder="E-mail"> </mat-form-field>

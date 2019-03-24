@@ -16,7 +16,7 @@ jobs:
       - run: npm run build
       - run: npm audit fix
       - run: aws s3 rm s3://univeritech --recursive
-      - run: aws s3 cp dist s3://univeritech --recursive
+      - run: aws s3 cp dist/unipro s3://univeritech --recursive
       #- run: aws s3 cp sitemap.xml s3://univeritech
       - run: aws cloudfront create-invalidation --distribution-id EPG88TOGLI4DY --paths "/*"
   nothing:
