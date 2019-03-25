@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ContactFormService } from '../service/contact-form-service';
 
@@ -9,16 +9,21 @@ import { ContactFormService } from '../service/contact-form-service';
 })
 export class ContactFormComponent {
 
+  @ViewChild('form') public mytemplateForm: NgForm;
+  sent: boolean;
+
   constructor(private contactForm: ContactFormService ) { }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    const displaySuccess = (_) => {
+      this.sent = true;
+      setTimeout( () => { this.sent = false; }, 5000);
+    };
+
     if (form.valid) {
-      this.contactForm.sendRequest(form.value)
-        .subscribe( data => {
-          console.log(data);
-        });
+      this.contactForm.sendRequest(form.value).subscribe( displaySuccess );
     }
+
   }
 
 }

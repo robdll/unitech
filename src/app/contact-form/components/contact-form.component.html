@@ -1,9 +1,10 @@
 
+
 <form #form="ngForm" class="form-container"  (ngSubmit)="onSubmit(form)">
   <h3 class="form-title">Contattaci</h3>
 
   <mat-form-field> <input #firstname="ngModel" required matInput ngModel type="text" name="firstname" placeholder="Nome"> </mat-form-field>
-  <span class="error" *ngIf="firstname.touched && firstname.errors?.required">Inserisci il tuo nome</span>
+  <span class="error" *ngIf="firstname.pristine && firstname.touched && firstname.errors?.required">Inserisci il tuo nome</span>
 
   <mat-form-field> <input #lastname="ngModel" required matInput ngModel type="text" name="lastname" placeholder="Cognome"> </mat-form-field>
   <span class="error" *ngIf="lastname.touched && lastname.errors?.required">Inserisci il tuo cognome</span>
@@ -17,5 +18,7 @@
   <mat-form-field> <textarea #description="ngModel" required matInput ngModel type="text" name="description" placeholder="Messaggio"></textarea></mat-form-field>
   <span class="error" *ngIf="description.touched && description.errors?.required">Inserisci il tuo messaggio</span>
 
-  <button type="submit" class="btn btn-black" [class.btn-disabled]="form.invalid" [disabled]="form.invalid">APPLY NOW!</button>
+  <span class="success" *ngIf="sent">Messaggio inviato correttamente</span>
+  <button type="submit" class="btn btn-black" [class.btn-disabled]="form.invalid || sent" [disabled]="form.invalid">APPLY NOW!</button>
+
 </form>
