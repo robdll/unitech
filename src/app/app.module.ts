@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormModule } from './contact-form/contact-form.module';
 
@@ -32,7 +31,6 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     MatRadioModule,
     MatSelectModule,
     /* App Module */
-    AppRoutingModule,
     ContactFormModule
   ],
   providers: [],
