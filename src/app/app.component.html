@@ -8,13 +8,9 @@
 <main class="main-container">
 
   <section class="section-container skillcategory-container">
-    <h2 class="skillcategory_title" data-aos="fade-up-right">Gli sviluppatori del futuro?</h2>
+    <h2 class="skillcategory_title" data-aos="fade-up-right">{{skillcategory.title}}</h2>
     <img class="skillcategory_img" src="/assets/timeline.svg" data-aos="fade-up-left" > 
-    <p class="skillcategory_copy" data-aos="fade-up-right">
-        UniversitàTech è l'academy degli sviluppatori del futuro.<br>
-        La nostra missione è forgiare esperienze e  conoscenza necessarie ad avviare la
-        <strong>TUA</strong> carriera nel mondo informatico.
-    </p>
+    <p class="skillcategory_copy" data-aos="fade-up-right" [innerHTML]="skillcategory.copy"> </p>
   </section>
 
 
@@ -45,7 +41,7 @@
       </div>
     </div>    
     <app-faq class="section-container"></app-faq>
-  </main>>
+  </main>
   
   <footer>
     <div class="footer-aling">
