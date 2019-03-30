@@ -35,7 +35,7 @@
   align-self: center;
   font-family: 'Cormorant', serif;
   font-weight: 300;
-  font-size: 7em;
+  font-size: 4em;
   border-bottom: 1px solid;
 }
 
@@ -48,7 +48,7 @@
 .main-container{
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  grid-template-rows: repeat(4,100vh) auto;
+  grid-template-rows: repeat(3,100vh) auto auto;
 }
 
 .section-container{
@@ -69,7 +69,7 @@
 }
 
 .skillcategory_title, .journey_title, .academy_title, .question_title {
-  font-size: 4em;
+  font-size: 1.5em;
   font-family: "Roboto", sans-serif;
   text-align: left;
   line-height: 100px;
@@ -83,7 +83,7 @@
 }
 
 .skillcategory_copy, .journey_copy, .academy_copy {
-  font-size: 2em;
+  font-size: 1em;
   text-align: justify;
 }
 
@@ -104,7 +104,7 @@
   flex-direction: row;
   height: auto;
   width: 100%;
-  margin: auto;
+  margin: auto auto 10% auto;
 }
 
 .question_title {
@@ -201,6 +201,7 @@
   height: 500px;
   width: 100%;
   bottom: 0;
+  font-size: 0.8em;
   background-color: grey;
   display: flex;
   align-items: center;
@@ -273,6 +274,5 @@
   color: black;
 }
 
-  
   
   
