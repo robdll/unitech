@@ -8,54 +8,45 @@
 <main class="main-container">
 
   <section class="section-container skillcategory-container">
-    <h2 class="skillcategory_title" data-aos="fade-up-right">{{skillcategory.title}}</h2>
+    <h2 class="skillcategory_title" data-aos="fade-up-right" [innerHTML]="skillcategory.title"></h2>
     <img class="skillcategory_img" src="/assets/timeline.svg" data-aos="fade-up-left" > 
     <p class="skillcategory_copy" data-aos="fade-up-right" [innerHTML]="skillcategory.copy"> </p>
   </section>
 
+  <section class="section-container journey-container">
+    <h2 class="journey_title" data-aos="fade-up-right" [innerHTML]="training.title"></h2>
+    <img class="journey_img" src="/assets/ilFuturo.svg" data-aos="fade-up-left"> 
+    <p class="journey_copy" data-aos="fade-up-right" [innerHTML]="training.copy"></p>
+  </section>
 
-    <div class="section-container journey-container">
-      <h2 class="main-title-copy" data-aos="fade-up-right">formazione degli sviluppatori del futuro</h2>
-      <img class="future" src="/assets/ilFuturo.svg" data-aos="fade-up-left"> 
+  <section class="section-container academy-container">
+    <h2 class="academy_title" data-aos="fade-up-right" [innerHTML]="academy.title"></h2>
+    <img class="academy_img" src="/assets/stop.svg" data-aos="fade-up-left"> 
+    <p class="academy_copy" data-aos="fade-up-right">{{academy.copy}}</p>
+  </section>
+
+  <section id="contattaci" class="section-container question-container">
+    <h2 class="question_title" data-aos="fade-up-right">Iscriviti!</h2>
+    <div class="question-subcontainer">
+      <app-contact-form class="contactFaq"></app-contact-form>
+      <app-faq class="contactFaq"></app-faq>
     </div>
-    <div class="flex-text">
-      <div class="">
-        <p class="copy" data-aos="fade-up-right">
-          Il nostro sistema è stato pensato e sviluppato da professionisti del settore.
-          ispirandosi a concetti fondamentali quali 'learning-by-doing' consente dal day 1 
-          un immersione in un vero ambiente di lavoro senza però tralasciare l importanza del supporto
-          educativo pensato adhoc per ogni studente.<br><br>
-        </p>
-      </div>
-    </div>
-
-
-
-    <div class="section-container">
-      <h2 class="main-title-copy" data-aos="fade-up-right">Formazione degli sviluppatori del futuro</h2>
-    </div>
-    <div class="text-grid" id="contattaci">
-      <app-contact-form></app-contact-form>
-      <div class="stop">
-        <img class="future-2" src="/assets/stop.svg" data-aos="fade-up-left"> 
-      </div>
-    </div>    
-    <app-faq class="section-container"></app-faq>
-  </main>
+  </section>
+</main>
   
-  <footer>
-    <div class="footer-aling">
-      <div class="contacts">
-        <h4 class="footer-class-title">Contatti</h4>
-        <p><strong>Milano</strong></p>
-        <p>Via della spiga 25</p>
-        <p>20900</p>
-        <p><strong>Roma</strong></p>
-        <p>Via Veneto 125f</p>
-        <p>20900</p>
-        <p style="padding:5px">info@unitech.it</p>      
-      </div>
-      <div class="contacts" style="
+<footer>
+  <div class="footer-aling">
+    <div class="contacts">
+      <h4 class="footer-class-title">Contatti</h4>
+      <p><strong>Milano</strong></p>
+      <p>Via della spiga 25</p>
+      <p>20900</p>
+      <p><strong>Roma</strong></p>
+      <p>Via Veneto 125f</p>
+      <p>20900</p>
+      <p style="padding:5px">info@unitech.it</p>      
+    </div>
+    <div class="contacts" style="
       display: flex;
       align-items: center;
       justify-content: center;
@@ -70,4 +61,4 @@
       <p>It’s as simple as that </p>
     </div>
   </div>
-  </footer>
+</footer>

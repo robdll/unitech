@@ -48,7 +48,7 @@
 .main-container{
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 100vh;
+  grid-template-rows: repeat(4,100vh) auto;
 }
 
 .section-container{
@@ -68,20 +68,56 @@
   grid-row: 1;
 }
 
-.skillcategory_title {
+.skillcategory_title, .journey_title, .academy_title, .question_title {
   font-size: 4em;
   font-family: "Roboto", sans-serif;
   text-align: left;
   line-height: 100px;
   border-bottom: 1px solid;
-}
-
-.skillcategory_img {
+  font-weight: normal;
   width: 100%;
 }
 
-.skillcategory_copy{
+.skillcategory_img, .journey_img {
+  width: 100%;
+}
+
+.academy_img {
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.skillcategory_copy, .journey_copy, .academy_copy {
   font-size: 2em;
+  text-align: justify;
+}
+
+.journey-container {
+  grid-row: 2;
+}
+
+.academy-container {
+  grid-row: 3;
+}
+
+.question-container {
+  justify-content: start;
+}
+
+.question-subcontainer {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  margin: auto;
+}
+
+.question_title {
+  margin-bottom: 0px;
+}
+.contactFaq {
+  width: 50%;
+  padding: 0 10px;
 }
 
 .btn{
@@ -154,13 +190,6 @@
   flex-direction: row;
   width: 70%;
   padding: 50px 0 50px 0;
-}
-
-.stop{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .icons-text{
