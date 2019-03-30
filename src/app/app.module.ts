@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactFormModule } from './contact-form/contact-form.module';
-import { MainComponent } from './main/main.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -16,16 +15,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
   ],
   imports: [
     /* Angular Module */
