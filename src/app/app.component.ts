@@ -8,7 +8,7 @@ import AOS from 'aos';
 })
 export class AppComponent implements OnInit {
   title = 'unipro';
-  skillcategory: object = {
+  skillcategory: Section = {
     title: `Sviluppatori del Futuro: `,
     subtitle: `Chi Sono`,
     copy: `Gli sviluppatori del futuro sono professionisti in grado di occuparsi di tutti gli aspetti di uno stack.
@@ -17,14 +17,14 @@ export class AppComponent implements OnInit {
     I Fullstack Developer sono veri e propri Coder in grado di lavorare su qualsiasi tipo di languaggio programmazione.
     Gli Ethical Hacker possiedono tutte le conoscenze necessarie per integrare ed interagire con i sistemi informatici.`
   };
-  training: object = {
+  training: Section = {
     title: `Sviluppatori del Futuro: `,
     subtitle: `Come si Diventa`,
     copy: `Diventare sviluppatore del futuro richiede esperienza, conoscenza e costanza nell'apprendimento.
     Il settore informatico è vasto e nel mezzo di un processo evolutivo inarrestabile.
     E' necessario creare delle fondamenta solide, focalizzarsi in un ambito ben preciso, e non smettere di imparare.`
   };
-  academy: object = {
+  academy: Section = {
     title: `Universita' Tech: `,
     subtitle: `La Nostra Missione`,
     copy: `Università.Tech ha l'obiettivo di trasformare semplici programmatori in veri professionisti informatici.
@@ -35,4 +35,10 @@ export class AppComponent implements OnInit {
     AOS.init();
   }
 
+}
+
+interface Section {
+  title: string;
+  subtitle: string;
+  copy: string;
 }
