@@ -12,3 +12,29 @@
     letter-spacing: 2px;
     color: #696969;  
 }
+
+.mat-accordion .mat-expansion-panel:last-of-type{
+    border-bottom-right-radius: 0px; 
+    border-bottom-left-radius: 0px; 
+}
+
+mat-accordion {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0px;
+}
+
+mat-expansion-panel{
+    width: 60%;
+    border-radius: 0px;
+    padding: 20px;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+}
