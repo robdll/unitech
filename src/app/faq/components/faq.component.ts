@@ -12,27 +12,27 @@ export class FaqComponent {
 
   faqs: Faq[] = [{
     question: `Cos'e' univeristatech?`,
-    answer: 'This is the primary content of the panel.'
+    answer: `E' un accademia di formazione per sviluppatori.`
   },
   {
     question: 'Come avviene la formazione?',
-    answer: 'This is the primary content of the panel.'
+    answer: 'Sia onLine che onSite tramite corsi mirati.'
   },
   {
     question: 'Come viene supportata la scelta?',
-    answer: 'This is the primary content of the panel.'
+    answer: `I candidati vengono indirizzati sulla base dei risultati ottenuti nei test degli interessi e delle abilità`
   },
   {
     question: `Come funzion l'introduzione al mondo del lavoro?`,
-    answer: 'This is the primary content of the panel.'
+    answer: 'Universita.tech assume direttamente tutti i candidati assegnandoli a progetti pensati su misura'
   },
   {
     question: 'UniverisitàTech è aperta a tutti?',
-    answer: 'This is the primary content of the panel.'
+    answer: 'Tutti possono iscriversi, tuttavia viene effettuata una selezione dovuto il limitato numero di posti.'
   },
   {
     question: 'Corso e metodi di pagamento?',
-    answer: 'This is the primary content of the panel.'
+    answer: 'E\' possibile pagare via carta di credito, bonifico, criptovalute, o contanti.'
   }];
 
 }

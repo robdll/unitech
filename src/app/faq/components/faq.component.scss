@@ -20,6 +20,7 @@
     font-weight: 200;
     letter-spacing: 2px;
     color: #696969;  
+    text-shadow: 0px 0px #888888;
 }
 
 .mat-accordion .mat-expansion-panel:last-of-type{
@@ -33,13 +34,11 @@ mat-accordion {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 0px;
 }
 
 mat-expansion-panel{
     width: 100%;
     border-radius: 0px;
-    padding: 0px 20px;
     box-sizing: border-box;
     margin-bottom: 5%;
 }
