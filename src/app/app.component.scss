@@ -64,18 +64,28 @@
   box-sizing: border-box;
 }
 
+.title-container {
+  display: flex; 
+  flex-direction: row;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
 .skillcategory-container {
   grid-row: 1;
 }
 
-.skillcategory_title, .journey_title, .academy_title, .question_title {
+.skillcategory_title, .journey_title, .academy_title, .question_title,
+  .skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle {
   font-size: 1.5em;
   font-family: "Roboto", sans-serif;
   text-align: left;
-  line-height: 100px;
-  border-bottom: 1px solid;
   font-weight: normal;
-  width: 100%;
+}
+
+.skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle {
+  flex: 1;
+  text-align: center;
 }
 
 .skillcategory_img, .journey_img, .academy_img {
@@ -110,6 +120,8 @@
 .question_title {
   margin-bottom: 0px;
 }
+
+
 .contactFaq {
   width: 50%;
   padding: 0 10px;

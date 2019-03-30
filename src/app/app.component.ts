@@ -9,23 +9,26 @@ import AOS from 'aos';
 export class AppComponent implements OnInit {
   title = 'unipro';
   skillcategory: object = {
-    title: `<strong>Sviluppatori del Futuro</strong>  -  Chi sono`,
-    copy: `UniversitàTech è l'academy degli sviluppatori del futuro.<br>
-    La nostra missione è forgiare esperienze e  conoscenza necessarie ad avviare la 
-      <strong>TUA</strong> carriera nel mondo informatico.`
+    title: `Sviluppatori del Futuro: `,
+    subtitle: `Chi Sono`,
+    copy: `Gli sviluppatori del futuro sono professionisti in grado di occuparsi di tutti gli aspetti di uno stack.
+    Sono divisi in 3 categorie: Fullstack Designer, Fullstack Developer, ed Ethical Hacker.
+    I Fullstack Designer si occupano di tutto ciò che riguarda il mondo visivo, dal prototipo al codice.
+    I Fullstack Developer sono veri e propri Coder in grado di lavorare su qualsiasi tipo di languaggio programmazione.
+    Gli Ethical Hacker possiedono tutte le conoscenze necessarie per integrare ed interagire con i sistemi informatici.`
   };
   training: object = {
-    title: `<strong>Sviluppatori del Futuro</strong>  -  Come si diventa`,
-    copy: `UniversitàTech è l'academy degli sviluppatori del futuro.<br>
-    La nostra missione è forgiare esperienze e  conoscenza necessarie ad avviare la 
-      <strong>TUA</strong> carriera nel mondo informatico.`
+    title: `Sviluppatori del Futuro: `,
+    subtitle: `Come si Diventa`,
+    copy: `Diventare sviluppatore del futuro richiede esperienza, conoscenza e costanza nell'apprendimento.
+    Il settore informatico è vasto e nel mezzo di un processo evolutivo inarrestabile.
+    E' necessario creare delle fondamenta solide, focalizzarsi in un ambito ben preciso, e non smettere di imparare.`
   };
   academy: object = {
-    title: `<strong>Universita' Tech</strong>  -  La Nostra Missione`,
-    copy: `Università.Tech ha l'obiettivo di trasformare sviluppatori junior in veri professionisti informatici fornendo la formazione;
-    effettuando analisi degli interessi; sopponendo test attitudinali; e valutando l'abilità tecnica.
-    Utilizzando queste informazioni indirizziamo i nostri candidati al ramo tecnico più adatto a loro, 
-    preoccupandoci anche dell'inizio della loro carriera.`
+    title: `Universita' Tech: `,
+    subtitle: `La Nostra Missione`,
+    copy: `Università.Tech ha l'obiettivo di trasformare semplici programmatori in veri professionisti informatici.
+    I nostri pilastri portanti sono la formazione, l'indirizzamento, e l'integrazione lavorativa.`
   };
 
   ngOnInit() {
@@ -33,3 +36,8 @@ export class AppComponent implements OnInit {
   }
 
 }
+
+
+// Fornendo l'adeguata formazione, analizzando gli interessi dei candidati ed effettuando valutazioni tecniche,
+//     riusciamo a determinare quale categoria sia la più adeguata per una carriera lavorativa proficua e di successo,
+//     preoccupandoci in prima persona dell'integrazione al lavoro.
