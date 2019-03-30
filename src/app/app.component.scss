@@ -202,19 +202,7 @@
   text-transform: uppercase;
 }
 
-.text-grid{
-  display: grid;
-  grid-gap: 50px;
-  width: 55%;
-  grid-template-columns: 1fr 1fr;
-  font-size: 1.7em;
-  line-height: 50px;
-  font-weight: 200;
-  font-family: 'Cormorant', serif;
-  color: black;
-}
-
-footer{
+.footer{
   height: 500px;
   width: 100%;
   bottom: 0;
@@ -246,7 +234,22 @@ footer{
   font-family: 'Raleway', sans-serif;
 }
 
-h4{
+.footer-right {
+  text-align:right; line-height:30px;
+}
+
+.footer-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-right {
+  text-align:right; line-height:30px;
+}
+
+.footer-class-title {
   font-size: 1.2em;
   letter-spacing: 7px;
   line-height: 50px;
