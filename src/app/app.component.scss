@@ -33,38 +33,55 @@
 .header_title {
   grid-row: 1;
   align-self: center;
-}
-
-
-.header_btn {
-  grid-row: 2;
-  align-self: start;
-}
-
-.main-container{
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: auto;
-  font-family: 'Cormorant', serif;
-  width: 100%;
-  padding: 90px 20px 50px 20px;  
-  box-sizing: border-box;
-}
-
-.main-title{
   font-family: 'Cormorant', serif;
   font-weight: 300;
   font-size: 7em;
   border-bottom: 1px solid;
+}
+
+.header_btn {
+  grid-row: 2;
+  align-self: start;
+  font-size: 3em;
+}
+
+.main-container{
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 100vh;
+}
+
+.section-container{
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: auto;
+  font-family: 'Cormorant', serif;
+  width: 100%;
+  // padding: 90px 20px 50px 20px;  
+  box-sizing: border-box;
+}
+
+.skillcategory-container {
+  grid-row: 1;
+}
+
+.skillcategory_title {
+  font-size: 4em;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  line-height: 100px;
+  border-bottom: 1px solid;
+}
+
+.skillcategory_img {
+  width: 100%;
+}
+
+.skillcategory_copy{
+  font-size: 2em;
 }
 
 .btn{
@@ -72,7 +89,6 @@
   color: white;
   border: 1px solid white;
   padding: 10px;
-  font-size: 2em;
   border-radius: 2px;
   font-family: 'Cormorant', serif;
   &:hover {
@@ -110,10 +126,6 @@
   font-weight: 200;
   font-family: 'Cormorant', serif;
   color: black;
-}
-
-.timeline{
-  width: 60%;
 }
 
 .future{
@@ -233,9 +245,7 @@ h4{
   font-family: 'Cormorant', serif;
   color: black;
 }
-.copy{
-  font-size: 31px;
-}
+
   
   
   
