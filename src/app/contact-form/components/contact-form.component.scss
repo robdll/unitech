@@ -31,14 +31,14 @@ textarea {
     border-radius: 2px;
     font-family: 'Cormorant', serif;
     &:hover {
-      cursor: pointer;
-      -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
-      -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
-      box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
-   }
-  }
-  
-  .btn-black{
+        cursor: pointer;
+        -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+        -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+        box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+    }
+}
+
+.btn-black{
     background-color: transparent;
     color: black;
     border: 1px solid black;
@@ -49,9 +49,9 @@ textarea {
     width: 300px;
     margin: 0 auto;
     &:hover {
-      -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
-      -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
-      box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+        -webkit-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+        -moz-box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
+        box-shadow: 0px 0px 19px 1px rgba(0,196,255,1);
     }
 }
 
@@ -68,7 +68,7 @@ textarea {
         -webkit-box-shadow: 0px 0px 19px 1px #d11717;
         -moz-box-shadow: 0px 0px 19px 1px #d11717;
         box-shadow: 0px 0px 19px 1px #d11717;
-     }
+    }
 }
 
 .success {
