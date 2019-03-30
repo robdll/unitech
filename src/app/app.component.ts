@@ -36,8 +36,3 @@ export class AppComponent implements OnInit {
   }
 
 }
-
-
-// Fornendo l'adeguata formazione, analizzando gli interessi dei candidati ed effettuando valutazioni tecniche,
-//     riusciamo a determinare quale categoria sia la più adeguata per una carriera lavorativa proficua e di successo,
-//     preoccupandoci in prima persona dell'integrazione al lavoro.
