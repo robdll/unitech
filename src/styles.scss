@@ -12,3 +12,24 @@ body {
 * {
   outline: none;
 }
+
+.timeline-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  font-family: 'Cormorant', serif;
+  width: 100%;
+  padding: 90px 20px 50px 20px;  
+  box-sizing: border-box;
+}
+
+.main-title-copy{
+  font-size: 4em;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  width: 55%;
+  line-height: 100px;
+  border-bottom: 1px solid;
+}
