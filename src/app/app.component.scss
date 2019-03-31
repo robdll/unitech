@@ -88,7 +88,6 @@
   font-size: 1.2em;
   line-height: 50px;
   text-align: justify;
-  font-weight: 200
 }
 
 .question-container {
@@ -202,12 +201,17 @@
 @media only screen and (max-width: 600px) {
 
   .logo-img {
-    width: 20px;
+    width: 6%;
     height: auto;
+    padding: 7px;
   }
 
-  .header, .main-container {
+  .header {
     padding: 0 2%;
+  }
+
+  .main-container {
+    padding: 0 6%;
   }
 
   .header_title {
@@ -218,19 +222,17 @@
     font-size: 2em;
   }
 
-  .title-container {
+  .section-container {
     flex-direction: column;
   }
 
-  .skillcategory_title, .skillcategory_subtitle,
-  .academy_title, .academy_subtitle,
-  .question_title, .question_subtitle,
-  .journey_title, .journey_subtitle {
-    margin-bottom: 0.3em;
+  .section_header_title, .section_header_subtitle {
+    font-size: 2.5em;
+    text-align: center;
   }
 
-  .skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle {
-    margin-top: 0px
+  .section_header_subtitle {
+    font-size: 1.5em;
   }
 
   .skillcategory_copy, .academy_copy, .journey_copy {
