@@ -46,28 +46,26 @@
 }
 
 .main-container{
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: repeat(3,100vh) auto auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20% 0 20%;
 }
 
 .section-container{
-  grid-column: 2;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  height: auto;
-  font-family: 'Cormorant', serif;
+  min-height: 100vh;
   width: 100%;
-  // padding: 90px 20px 50px 20px;  
   box-sizing: border-box;
 }
 
 .title-container {
   display: flex; 
-  flex-direction: row;
+  flex-direction: column;
   border-bottom: 1px solid;
+  padding: 50px 0px 0px 0px;
   width: 100%;
 }
 
@@ -75,26 +73,35 @@
   grid-row: 1;
 }
 
-.skillcategory_title, .journey_title, .academy_title, .question_title,
-  .skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle {
-  font-size: 1.5em;
-  font-family: "Roboto", sans-serif;
+.skillcategory_title, .journey_title, .academy_title, .question_title {
+  margin:0px;
+  font-size: 4em;
+  font-family: 'Raleway', sans-serif;
   text-align: left;
-  font-weight: normal;
+  font-weight: medium;
+}
+.skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle{
+  font-size: 2.5em;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  font-weight: lighter;
 }
 
 .skillcategory_subtitle, .journey_subtitle, .academy_subtitle, .question_subtitle {
-  flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .skillcategory_img, .journey_img, .academy_img {
   width: 100%;
+  padding: 30px;
 }
 
 .skillcategory_copy, .journey_copy, .academy_copy {
-  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 50px;
   text-align: justify;
+  font-weight: 200
 }
 
 .journey-container {
@@ -251,6 +258,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 25px;
 }
 
 .footer-class-title {
@@ -308,7 +316,7 @@
 
   .skillcategory_copy, .academy_copy, .journey_copy {
     word-spacing: 2px;
-    font-size: 1em;
+    font-size: 2em;
   }
 
   .question-subcontainer {
