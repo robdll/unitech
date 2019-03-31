@@ -163,11 +163,13 @@
   height: auto;
   width: 100%;
   font-size: 0.8em;
-  display: block;
+  display: grid;
+  grid-template: auto / 30% 46% 30%;
+  grid-column-gap: 2%;
   background-color: grey;
   color: white;
   font-family: 'Raleway', sans-serif;
-  padding: 0 7%;
+  padding: 0 10%;
   box-sizing: border-box; 
 }
 
@@ -248,6 +250,12 @@
 
   #contact-form {
     border: none; 
+  }
+
+  .footer{
+    display: block;
+    padding: 0 7%;
+    box-sizing: border-box; 
   }
 
   .footer_middle {
