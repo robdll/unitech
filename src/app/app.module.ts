@@ -24,7 +24,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     BrowserModule,
     FormsModule,
     /* Lib Module */
-    NgxPageScrollCoreModule,
+    NgxPageScrollCoreModule.forRoot({ }),
     NgxPageScrollModule,
     MatInputModule,
     MatRadioModule,
