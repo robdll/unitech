@@ -20,7 +20,7 @@ export class FaqComponent {
   },
   {
     question: 'Come viene supportata la scelta?',
-    answer: `I candidati vengono indirizzati sulla base dei risultati ottenuti nei test degli interessi e delle abilità`
+    answer: `I candidati vengono indirizzati sulla base dei risultati ottenuti nei test degli interessi e delle abilità`.
   },
   {
     question: `Come funzion l'introduzione al mondo del lavoro?`,
